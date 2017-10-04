@@ -1,0 +1,42 @@
+<html>
+<head>
+<title>
+T1A07-Objects-Vansh
+</title>
+<script>
+			function myStudent(myAge, myName, myImage){
+				this.myStudentAge = myAge
+				this.myStudentName = myName
+				this.myStudentImage = myImage
+				this.myShowInfo = function(){
+					document.getElementById('myDiv01').innerHTML = ''
+					document.getElementById('myDiv01').innerHTML += 'My name is ' + this.myStudentName + ' <br>';
+					document.getElementById('myDiv01').innerHTML += 'My age is ' + this.myStudentAge + ' <br>';
+					document.getElementById('myDiv01').innerHTML += 'My Picture ' + this.myStudentImage + ' <br>';
+					};
+				}
+</script>
+</head>
+<body>
+<p>
+<form>
+
+<input type=button value="Set Fred" onclick="{
+	myFred = new myStudent(20,'fred','https://www.w3schools.com/css/img_lights.jpg')
+	}">
+
+<input type=button value="Button" onclick="{
+	myFred.myShowInfo()
+}">
+
+<input type=button value="Button" onclick="{
+	myMary = new myStudent(18,'Mary','https://cdn.pixabay.com/photo/2017/01/06/19/15/soap-bubble-1958650_960_720.jpg')
+	myMary.myShowInfo()
+}">
+
+
+<div id="myDiv01"> . . . <br></div>
+
+</form>
+</body>
+</html>

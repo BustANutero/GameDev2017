@@ -1,0 +1,30 @@
+<html>
+<head>
+<title>
+
+</title>
+<script>
+			function myOb(x){
+			this.myX = x * 5;
+			this.myFun = function(){
+			document.getElementById('myDiv01').innerHTML =
+			'The properthy <b> this.myX </b> = ' + this.myX + ', but the passed variable <b>x</b> = ' + x 
+			}
+}
+</script>
+</head>
+<body>
+<p>
+<form>
+
+
+<input type=button value="Button" onclick="{
+	myObject = new myOb(4)
+	myObject.myfun()
+}"><br><br>
+
+<div id="myDiv01"> Yooo </div>
+
+</form>
+</body>
+</html>

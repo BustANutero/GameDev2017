@@ -1,0 +1,64 @@
+<html>
+<head>
+<script>
+	function printer(){
+		document.getElementById('myDiv02').innerHTML = 'So you\'re feeling '+document.getElementById('feels').value +'?'
+	}
+</script>
+<title>
+HTML A04
+</title>
+</head>
+<body>
+<p><center><h1>Input/Output</h1>
+		   <h4>Use the first box and button to square numbers and use the second to output plain text</h4></center><br>
+<form>
+<br>
+
+Number: <input type=number id="num1" value="0"><br>
+<input type=button value="Square" 
+
+onclick="{document.getElementById('myDiv01').innerHTML = document.getElementById('num1').value * document.getElementById('num1').value
+document.getElementById('myDiv01').style.textAlign='center'
+
+}"
+<br><br><br>
+
+First Name: <input type=text id="name1" value="Name"><br>
+<input type=button value="Text" 
+
+	onclick="{
+		document.getElementById('myDiv01').innerHTML = document.getElementById('name1').value
+		document.getElementById('myDiv01').style.color = 'green'
+		document.getElementById('myDiv01').style.textAlign='center'
+
+}"
+
+
+
+<br><br><br><br>
+<div id="myDiv01" style="font-size:40px;text-align:center;"> Your Number Or Text Will Appear Here</div>
+
+How are you feeling?<br>
+<input type=text id="feels"><br><br>
+<input type=button value="Feeling" 
+
+	onclick="{if (!document.getElementById('feels').value) {document.getElementById('myDiv02').innerHTML = 'So you\'re feeling nothing..?' }
+			else {printer()}
+	
+	
+	}"
+	//"{printer()
+		//document.getElementById('text01').style.visibility='visible'
+		//document.getElementById('myDiv02').innerHTML = 'So you\'re feeling '+document.getElementById('feels').value +'?'
+	//}
+	//{if (document.getElementById('text01').value == null) {
+			//	document.getElementById('myDiv02).innerHTML = 'So you're feeling nothing..?'}	
+	
+//}"
+<br><br><br><br>
+<div id="myDiv02">Helo</div>
+
+</form>
+</body>
+</html>

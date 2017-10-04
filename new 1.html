@@ -1,0 +1,17 @@
+<script>
+function myAnimal(myOut){
+this.myX = myOut;
+this.myMeth= function()
+		{ 
+document.getElementById('myDiv01').innerHTML = 'Your age is ' + this.myX + '?'
+
+	}
+}
+</script>
+<input type=text value=8 id="myText01">
+<input type=button value="click" onclick="{
+	myObject = new myAnimal(document.getElementById('myText01').value)
+	myObject.myMeth()
+	alert(myObject.myX)
+}">
+<div id="myDiv01"> ... </div>
