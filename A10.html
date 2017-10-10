@@ -1,0 +1,45 @@
+<html>
+<head>
+<title>
+
+</title>
+<script>
+			function potato(){
+				//document.getElementById('myImage01').style.left = '150px';
+				document.getElementById('myImage01').style.left = parseInt(document.getElementById('myImage01').style.left) + 20 + 'px'
+				}
+			function loopotato(){
+				for(myLoo = 0; myLoo <10000; myLoo++){
+				document.getElementById('myImage01').style.left = parseInt(document.getElementById('myImage01').style.left) + 20 + 'px'
+				}
+			}
+</script>
+</head>
+<body onkeydown="{
+	//{alert(String.fromCharCode(event.keyCode))
+	if ((String.fromCharCode(event.keyCode)) == 'D'){
+					document.getElementById('myImage01').style.left = parseInt(document.getElementById('myImage01').style.left) + 20 + 'px'};
+	if ((String.fromCharCode(event.keyCode)) == 'S'){
+					document.getElementById('myImage01').style.top = parseInt(document.getElementById('myImage01').style.top) + 20 + 'px'
+			
+};	if ((String.fromCharCode(event.keyCode)) == 'A'){
+					document.getElementById('myImage01').style.left = parseInt(document.getElementById('myImage01').style.left) - 20 + 'px'};
+	if ((String.fromCharCode(event.keyCode)) == 'W'){
+					document.getElementById('myImage01').style.top = parseInt(document.getElementById('myImage01').style.top) - 20 + 'px'};
+}">
+<p>
+<form>
+
+<img id="myImage01" width=100 src="https://i.pinimg.com/736x/75/56/d7/7556d7406f3f1cd3571e4b20058b8ce1--unicorn-kitty-chibi-unicorn.jpg" style="position:absolute;top:100;left:50;">
+<input type=button value="Right" onclick="{
+	potato()
+}">
+<input type=button value="Loop" onclick="{
+	loopotato()
+}">
+
+<div id="myDiv01"> Yooo </div>
+
+</form>
+</body>
+</html>
