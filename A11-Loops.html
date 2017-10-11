@@ -1,0 +1,28 @@
+<html>
+<head>
+<title>
+
+</title>
+<script>
+			function Loop() { 
+				x = document.getElementById('myNum01').value
+					for (myLoop = 0; myLoop < x ; myLoop++)
+				{document.getElementById('myDiv01').innerHTML += ' ' + document.getElementById('myText01').value
+				}
+			}
+</script>
+</head>
+<body>
+<p>
+<form>
+
+
+<input type=text value"0" id=myText01><br><br>
+<input type=number value"0" id=myNum01><br><br>
+<input type=button value="Button" onclick="{ Loop() }">
+
+<div id="myDiv01"> Yooo </div>
+
+</form>
+</body>
+</html>
