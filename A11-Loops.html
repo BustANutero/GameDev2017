@@ -5,9 +5,25 @@
 </title>
 <script>
 			function Loop() { 
-				x = document.getElementById('myNum01').value
+				 x = document.getElementById('myNum01').value
 					for (myLoop = 0; myLoop < x ; myLoop++)
 				{document.getElementById('myDiv01').innerHTML += ' ' + document.getElementById('myText01').value
+				}
+			};
+			function makeRay(){
+				myRay = new Array()
+				x = document.getElementById('myNum01').value
+				for (myY = 0; myY < x ; myY++){
+				myRay[myY] = Math.round(Math.random()*100) + '<br>'
+				myRay[myY] = Math.round(Math.random()*100)
+				myRay[myY] = Math.round(Math.random()*100)
+				myRay[myY] = Math.round(Math.random()*100)
+				myRay[myY] = Math.round(Math.random()*100)
+					}
+				}
+			function showRay(){
+				for (myL = 0; myL < myY ; myL++){
+				document.getElementById('myDiv01').innerHTML +=  'My Array [' + myL + '] = ' + myRay[myL] + '<br>'
 				}
 			}
 </script>
@@ -17,11 +33,15 @@
 <form>
 
 
-<input type=text value"0" id=myText01><br><br>
-<input type=number value"0" id=myNum01><br><br>
-<input type=button value="Button" onclick="{ Loop() }">
+<input type=text value="Words" id=myText01><br><br>
+<input type=number value="5" id=myNum01><br><br>
+<input type=button value="Loop Words" onclick="{ Loop() }">
+<input type=button value="Make Array" onclick="{ makeRay() }">
+<input type=button value="Show Array" onclick="{ showRay() }">
+<input type=button value="Make And Show Array" onclick="{ makeRay(); showRay() }">
 
-<div id="myDiv01"> Yooo </div>
+
+<div id="myDiv01"> Yooo<br></div>
 
 </form>
 </body>
