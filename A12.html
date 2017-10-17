@@ -1,0 +1,102 @@
+<script>
+
+function cancel() {
+document.getElementById('firstNumber').value = null;
+document.getElementById('secondNumber').value = null;
+document.getElementById('thirdNumber').value = null;
+document.getElementById('answer').value = null;
+document.getElementById('secondAnswer').value = null;
+document.getElementById('thirdAnswer').value = null;
+}
+
+
+
+function equadion() {
+var a = document.getElementById('firstNumber').value;
+var b = document.getElementById('secondNumber').value;
+var c = document.getElementById('thirdNumber').value;
+var discr = (b * b) - 4 * (a * c);
+var sqrDiscr = Math.sqrt(discr);
+
+
+document.getElementById('answer').value = discr;
+if ((a == 0 ) &&( b == 0 ) && (c == 0)){
+   document.getElementById('secondAnswer').value = "Something went wrong!";
+} else if (discr < 0){
+   document.getElementById('secondAnswer').value = "There is no solution to this equadion";
+   document.getElementById('thirdAnswer').value = "-";
+   }else if (discr == 0){
+      document.getElementById('secondAnswer').value = "This equadion can have one root";
+      document.getElementById('thirdAnswer').value = ((- b - sqrDiscr) / (2 * a));
+      }else if (discr > 0){
+         document.getElementById('secondAnswer').value = "There can be two roots of this equadion";
+         document.getElementById('thirdAnswer').value = ((- b + sqrDiscr) / (2 * a)) + ";     " + ((- b - sqrDiscr) / (2 * a));
+     }
+}
+
+	function quad() {
+				x = parseFloat(document.getElementById('myX').value)
+				a = parseFloat(document.getElementById('myA').value)
+				b = parseFloat(document.getElementById('myB').value)
+				c = parseFloat(document.getElementById('myC').value)
+				y = a * (x*x) + (b * x) +c
+				document.getElementById('myDiv01').innerHTML += ' ' + y
+			}
+
+</script>
+
+
+
+For the special case where y=0 The quadractic equadion is very useful<br>
+
+0 = 
+<input id="firstNumber" type="text" size="2" value=1></input>
+   x<sup>2</sup>   +
+<input id="secondNumber" type="text" size="2" value="3"></input>
+  x +
+<input id="thirdNumber" type="text" size="2" value="1"></input>  
+
+
+(Enter coefficients)</br></br>
+<input id="count" type="button" value="Quadratic Formula" onclick="equadion()"></input></br></br>
+
+<a>Discriminant is </a><input id="answer" type="text" size="5" readonly="readonly"></input> 
+if < 0 no solution, = 0 one solution, > 0 two solutions </br></br>
+
+<a>Hints </a></br><input id="secondAnswer" type="text" size="60" readonly="readonly"></input></input></br></br>
+
+<a>Roots</a></br><input id="thirdAnswer" type="text" readonly="readonly" style="width:100%"></input></br><br>
+<input type="button" value="Clear" onclick="cancel()"></input><br><br>
+
+
+
+
+
+
+
+
+
+
+What can we do if y does not equal zero?<br>
+We could just try to solve the equadion<br>
+Write a program to solve the quadratic equadion for y given x and <br>
+y=ax<sup>2</sup> + bx + c using any coefficients (should output "Can't be solved" on any errors)<br>
+<br>
+x = <input type=number value=4 id="myX"><br>
+y = <input type=number value=3 id="myA" >x<sup>2</sup> + <input type=number value=2 id="myB">x+<input type=number value=1 id="myC"><br><br>
+
+<input type="button" value="Solve" onclick="{quad()}"> Your answer (or errors) 
+
+<div id="myDiv01">y =</div>
+
+
+
+
+
+
+
+
+
+
+
+
