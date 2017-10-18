@@ -1,46 +1,57 @@
-
 <html>
 <head>
 <title>
-HTML A01
+
 </title>
+<script>
+			function potato(){
+				//document.getElementById('myImage01').style.left = '150px';
+				document.getElementById('myImage01').style.left = parseInt(document.getElementById('myImage01').style.left) + 20 + 'px'
+				}
+			function loopotato(){
+				for(myLoo = 0; myLoo <10000; myLoo++){
+				document.getElementById('myImage01').style.left = parseInt(document.getElementById('myImage01').style.left) + 20 + 'px'
+				}
+			}
+			function seize(){
+				document.getElementById('booty').style.backgroundImage = 'url(https://i.imgur.com/jSNNR0G.gif)'
+			}
+	
+	
+</script>
 </head>
-<body>
-<center> <h1> All my files! Game Dev 2017 by Vansh</h1><br> <a href="https://github.com/BustANutero/GameDev2017">Github</a> </center>
+<body id="booty" style="background-image: url('https://i.imgur.com/jSNNR0G.gif');"
+onkeydown="{
+	//{alert(String.fromCharCode(event.keyCode))
+	if ((String.fromCharCode(event.keyCode)) == 'D'){
+					document.getElementById('myImage01').style.left = parseInt(document.getElementById('myImage01').style.left) + 20 + 'px'};
+	if ((String.fromCharCode(event.keyCode)) == 'S'){
+					document.getElementById('myImage01').style.top = parseInt(document.getElementById('myImage01').style.top) + 20 + 'px'
+			
+};	if ((String.fromCharCode(event.keyCode)) == 'A'){
+					document.getElementById('myImage01').style.left = parseInt(document.getElementById('myImage01').style.left) - 20 + 'px'
+					};
+	if ((String.fromCharCode(event.keyCode)) == 'W'){
+					document.getElementById('myImage01').style.top = parseInt(document.getElementById('myImage01').style.top) - 20 + 'px'};
+	if ((String.fromCharCode(event.keyCode)) == 'Q'){
+					document.getElementById('booty').style.backgroundImage = 'url(http://www.pbh2.com/wordpress/wp-content/uploads/2013/05/cutest-cat-gifs-kitten-meow.gif)'
+					document.getElementById('myImage01').src = 'http://www.pbh2.com/wordpress/wp-content/uploads/2013/05/cutest-cat-gifs-kitten-meow.gif'
+					};
+		setTimeout(function(){seize();}, 3000);
+}">
 <p>
-	<a target="_blank" href="https://docs.google.com/document/d/1OzlFeEWu0pIeclCy1ZThfTwzlFbll3nfMiNAicSX0aw/edit?usp=sharing">R01-Objects-research-name</a>
-<ul>
-	<li><a href="A01-html-Vansh.html">T1a01-html-name.html 
-</a>
-<li><a target="_blank" href="A02-forms-Vansh.html">t1a02-forms-name.html 
-</a>
-<li><a target="_blank" href="A03-CSS-Vansh.html">t1a03-CSS-name.html </a>
-<li><a target="_blank" href="A04-Javascript-Vansh.html">t1a04-javascript-name.html 
-</a>
-<li><a target="_blank" href="A05-Numbers-Vansh.html">t1a05-if-else-name.html 
-</a>
-<li><a target="_blank" href="A06-Cube-Vansh.html">t1a06-functions-name.html 
-</a>
-<li><a target="_blank" href="A07.html">t1a07-objects-name.html 
-</a>
-<li><a target="_blank" href="A07-EasyObject-Vansh.html">t1a08-easy-object-name.html 
-5/9 it works 7/9 get working 3 properties and 3 functions 8/9 activate and show 3 objects, (only one object definition please)
-</a>
-<li><a target="_blank" href=""></a>
-<li><a target="_blank" href="A10.html">t1a10-move-name.html </a>
-<li><a target="_blank" href="A11-Loops.html">t1a11-array-loop-name.html</a>
-<li><a target="_blank" href="A12.html">T1A12-Quadratic-Name (after interm)</a>
-<li><a target="_blank" href=""></a>
-<li><a target="_blank" href=""></a>
-<li><a target="_blank" href=""></a>
-<li><a target="_blank" href=""></a>
-<li><a target="_blank" href=""></a>
-<li><a target="_blank" href=""></a>
+<form>
 
-				
-	<br><br><br><br><br><br><br>
+<img id="myImage01" width=100 src="https://i.imgur.com/OB6C0Bz.gif" style="position:absolute;top:100;left:50;">
+<input type=button value="Right" onclick="{
+	potato()
+}">
+<input type=button value="Loop" onclick="{
+	loopotato()
+}">
 
+<div id="myDiv01"> Yooo </div>
 
-</ul>
+</form>
 </body>
 </html>
