@@ -13,9 +13,15 @@
 				document.getElementById('myImage01').style.left = parseInt(document.getElementById('myImage01').style.left) + 20 + 'px'
 				}
 			}
+			function seize(){
+				document.getElementById('booty').style.backgroundImage = 'url(https://i.imgur.com/jSNNR0G.gif)'
+			}
+	
+	
 </script>
 </head>
-<body onkeydown="{
+<body id="booty" style="background-image: url('https://i.imgur.com/jSNNR0G.gif');"
+onkeydown="{
 	//{alert(String.fromCharCode(event.keyCode))
 	if ((String.fromCharCode(event.keyCode)) == 'D'){
 					document.getElementById('myImage01').style.left = parseInt(document.getElementById('myImage01').style.left) + 20 + 'px'};
@@ -23,14 +29,20 @@
 					document.getElementById('myImage01').style.top = parseInt(document.getElementById('myImage01').style.top) + 20 + 'px'
 			
 };	if ((String.fromCharCode(event.keyCode)) == 'A'){
-					document.getElementById('myImage01').style.left = parseInt(document.getElementById('myImage01').style.left) - 20 + 'px'};
+					document.getElementById('myImage01').style.left = parseInt(document.getElementById('myImage01').style.left) - 20 + 'px'
+					};
 	if ((String.fromCharCode(event.keyCode)) == 'W'){
 					document.getElementById('myImage01').style.top = parseInt(document.getElementById('myImage01').style.top) - 20 + 'px'};
+	if ((String.fromCharCode(event.keyCode)) == 'Q'){
+					document.getElementById('booty').style.backgroundImage = 'url(http://www.pbh2.com/wordpress/wp-content/uploads/2013/05/cutest-cat-gifs-kitten-meow.gif)'
+					document.getElementById('myImage01').src = 'http://www.pbh2.com/wordpress/wp-content/uploads/2013/05/cutest-cat-gifs-kitten-meow.gif'
+					};
+		setTimeout(function(){seize();}, 3000);
 }">
 <p>
 <form>
 
-<img id="myImage01" width=100 src="https://i.pinimg.com/736x/75/56/d7/7556d7406f3f1cd3571e4b20058b8ce1--unicorn-kitty-chibi-unicorn.jpg" style="position:absolute;top:100;left:50;">
+<img id="myImage01" width=100 src="https://i.imgur.com/OB6C0Bz.gif" style="position:absolute;top:100;left:50;">
 <input type=button value="Right" onclick="{
 	potato()
 }">
