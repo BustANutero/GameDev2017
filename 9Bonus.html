@@ -1,0 +1,68 @@
+<script>
+function myVehical(mySpeed, myName){
+	this.myVehicalSpeed = mySpeed 
+	this.myVehicalName = myName
+	this.myShow = function(){
+		alert()
+		document.getElementById('myDiv1').innerHTML += ''
+		document.getElementById('myDiv1').innerHTML += 'My name is ' + this.myVehicalName + '<br>'
+		document.getElementById('myImage01').src = document.getElementById('myText01').value
+	   	}
+	this.myLeft = function(){
+				document.getElementById('myImage01').style.left = parseInt(document.getElementById('myImage01').style.left) - mySpeed + 'px'
+				}
+			
+	this.myRight = function(){
+				document.getElementById('myImage01').style.left = parseInt(document.getElementById('myImage01').style.left) + mySpeed + 'px'
+				}
+			
+	this.myDown = function(){
+				document.getElementById('myImage01').style.top = parseInt(document.getElementById('myImage01').style.top) + mySpeed + 'px'
+				}
+	this.myUp = function (){
+				document.getElementById('myImage01').style.top = parseInt(document.getElementById('myImage01').style.top) - mySpeed + 'px'
+			}
+	
+}
+</script>
+
+<body onload="{
+myCar = new myVehical(18, 'Jason')
+}"
+onkeydown="{ 
+	if ((String.fromCharCode(event.keyCode)) == 'W'){
+	myCar.myUp()
+	};
+	if ((String.fromCharCode(event.keyCode)) == 'S'){
+	myCar.myDown()
+	};
+	if ((String.fromCharCode(event.keyCode)) == 'D'){
+	myCar.myRight()
+	};
+	if ((String.fromCharCode(event.keyCode)) == 'A'){
+	myCar.myLeft()
+	};
+}">
+Enter a picture you want as your car : <input type="text" value="https://upload.wikimedia.org/wikipedia/en/f/ff/VroomVroomEP.png" id="myText01"><br>
+<input type=button value="Set Jason Speed/Picture and Show" onclick="{
+	myCar.myShow()
+}">
+
+
+<input type=button value="Move Right" onclick="{
+	document.getElementById('myImage01').style.left = parseInt(document.getElementById('myImage01').style.left) + 20 + 'px'
+}">
+<input type=button value="Move Up" onclick="{
+	document.getElementById('myImage01').style.top = parseInt(document.getElementById('myImage01').style.top) - 20 + 'px'
+}">
+<input type=button value="Move Down" onclick="{
+	document.getElementById('myImage01').style.top = parseInt(document.getElementById('myImage01').style.top) + 20 + 'px'
+}">
+<input type=button value="Move Left" onclick="{
+	document.getElementById('myImage01').style.left = parseInt(document.getElementById('myImage01').style.left) - 20 + 'px'
+}">
+
+<img id="myImage01" style="position:absolute;top:100;left:50;" width=100 src="https://www.trulynolen.com/images/mouse-car/current-mousecar.jpg">
+
+<div id='myDiv1'><br></div>
+</body>
