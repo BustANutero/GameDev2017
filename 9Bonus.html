@@ -3,14 +3,16 @@ function myVehical(mySpeed, myName){
 	this.myVehicalSpeed = mySpeed 
 	this.myVehicalName = myName
 	this.myShow = function(){
-		alert()
-		document.getElementById('myDiv1').innerHTML += ''
+		alert('You car has been swapped!')
+		document.getElementById('myDiv1').innerHTML = '<br>'
 		document.getElementById('myDiv1').innerHTML += 'My name is ' + this.myVehicalName + '<br>'
+		mySpeed = parseInt(document.getElementById('myNum01').value) 
+		myName = document.getElementById('myText02').value
 		document.getElementById('myImage01').src = document.getElementById('myText01').value
 	   	}
 	this.myLeft = function(){
-				document.getElementById('myImage01').style.left = parseInt(document.getElementById('myImage01').style.left) - mySpeed + 'px'
-				}
+	    document.getElementById('myImage01').style.left = parseInt(document.getElementById('myImage01').style.left) - mySpeed + 'px'
+	}
 			
 	this.myRight = function(){
 				document.getElementById('myImage01').style.left = parseInt(document.getElementById('myImage01').style.left) + mySpeed + 'px'
@@ -27,7 +29,7 @@ function myVehical(mySpeed, myName){
 </script>
 
 <body onload="{
-myCar = new myVehical(18, 'Jason')
+myCar = new myVehical(18, 'Vroomy')
 }"
 onkeydown="{ 
 	if ((String.fromCharCode(event.keyCode)) == 'W'){
@@ -43,8 +45,10 @@ onkeydown="{
 	myCar.myLeft()
 	};
 }">
-Enter a picture you want as your car : <input type="text" value="https://upload.wikimedia.org/wikipedia/en/f/ff/VroomVroomEP.png" id="myText01"><br>
-<input type=button value="Set Jason Speed/Picture and Show" onclick="{
+Enter a picture you want as your car : <input type="text" value="https://upload.wikimedia.org/wikipedia/en/f/ff/VroomVroomEP.png" id="myText01"><br><br>
+Enter your car's speed : <input type="number" value="18" id="myNum01"><br><br>
+Enter your car's name : <input type="text" value="Vroomy" id="myText02"><br><br>
+<input type=button value="Set Jason Speed/Picture/Name and Show" onclick="{
 	myCar.myShow()
 }">
 
@@ -62,7 +66,7 @@ Enter a picture you want as your car : <input type="text" value="https://upload.
 	document.getElementById('myImage01').style.left = parseInt(document.getElementById('myImage01').style.left) - 20 + 'px'
 }">
 
-<img id="myImage01" style="position:absolute;top:100;left:50;" width=100 src="https://www.trulynolen.com/images/mouse-car/current-mousecar.jpg">
+<img id="myImage01" style="position:absolute;top:200;left:50;" width=100 src="https://www.trulynolen.com/images/mouse-car/current-mousecar.jpg">
 
 <div id='myDiv1'><br></div>
 </body>
