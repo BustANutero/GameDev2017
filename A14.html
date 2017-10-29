@@ -1,0 +1,78 @@
+<html>
+<head>
+<title>
+
+</title>
+<script>
+		x = 0;
+			function myScroll(){
+			document.getElementById('myDiv01').innerHTML = 'You\'ve scrolled ' + (x += 1) +  ' times';
+			}
+</script>
+</head>
+<body onafterprint="{
+alert('You just printed something!');
+}"
+onbeforeprint="{
+alert('You are about to print something!');
+}"
+ondblclick="{
+alert('STOP DOUBLE CLICKING');
+}"
+onload="{
+alert('Welcome to my webpage');
+}"
+onunload="{
+window.open('http://google.ca');
+}"`
+onkeydown="{
+document.getElementById('myDiv01').innerHTML = 'You pressed ' +String.fromCharCode(event.keyCode);
+}"
+>
+<p>
+<form>
+
+
+<input type="text" value"0" id="myText01"  onblur="{
+document.getElementById('myDiv01').innerHTML = 'You just blurred out the textbox';
+}"
+onpaste="{
+	document.getElementById('myDiv01').innerHTML = 'You pasted something';
+}"
+oncut="{
+	document.getElementById('myDiv01').innerHTML = 'You cut something';
+}"
+onfocus="{
+document.getElementById('myDiv01').innerHTML = 'You just focused into the textbox';
+}"
+onchange="{
+document.getElementById('myDiv01').innerHTML = 'You just changed the textbox';
+}"
+onMouseOver="{
+document.getElementById('myDiv01').innerHTML =  'You just moused over the textbox';
+}"
+onMouseOut="{
+document.getElementById('myDiv01').innerHTML =  'You just moused out of the textbox';
+}"
+oncopy="{
+	document.getElementById('myDiv01').innerHTML = 'You copied something';
+	}"
+><br>
+
+<div id="myDiv01" onclick="{alert('STOP CLICKING');}"
+> There are two print functions that work on firefox :)
+If you drag the image into the text area then it will show you the URL for the image. You can also just drag the image into a new tab. If you click on this line of text then it will show an alert and if you double click anywhere else it will also give an alert. There's an alert when you double click, an alert when you click on the div, you can drag the image and you get the URL for it, you can mouse over and mouse out of the textbox, you can copy/paste/cut in the textbox, you can onfocus on the textbox and you can onfocus on the div. There's also an onblur on the textbox. If you scroll the div then the webpage counts the number of scrolls. When you first open the webpage it gives you an alert and on closing the webpage it takes you to google. Lastly it tracks what key you press on your keyboard inside of the div when you press it.</div><br>
+<img id="myImage01" src="https://www.smashingmagazine.com/wp-content/uploads/2015/06/10-dithering-opt.jpg" width="300" draggable="true" 
+ondrag="{
+document.getElementById('myDiv01').innerHTML = document.getElementById('myImage01').src;
+}">
+<textarea cols=50 rows=20 
+onscroll="{
+ myScroll();
+}"
+onfocus="{
+ document.getElementById('myText01').focus();
+}">K? K what? The letter before L? The letter after J? Did you know that in JK the K stands for “kidding?” So your reply is “kidding?” or K as in Potassium? Do you need some Special K for breakfast? K as in I can K/O you? Can I knock you out and feed you to hungry sharks? Sharks have a K in it. "K"? Are you freaking kidding me? I spent a decent portion of my life writing all of that and your response to me is "K"? Are you so mentally handicapped that the only letter you can comprehend is "K" - or are you just some freaking meanie who thinks that with such a short response, he can make a statement about how meaningless what was written was? Well, I'll have you know that what I wrote was NOT meaningless, in fact, I even had my written work proof-read by several professors of literature. Don't believe me? I doubt you would, and your response to this will probably be "K" once again. Do I give a crappity crap crap? No, does it look like I give even the slightest gosh diddly darn about a single letter? I bet you took the time to type that one letter too, I bet you sat there and chuckled to yourself for 20 hearty seconds before pressing "send". You're so freaking pathetic. I'm honestly considering directing you to a psychiatrist, but I'm simply far too nice to do something like that. You, however, will go out of your way to make a fool out of someone by responding to a well-thought-out, intelligent, or humorous statement that probably took longer to write than you can last in bed with a chimpanzee. What do I have to say to you? Absolutely nothing. I couldn't be bothered to respond to such a worthless attempt at a response. Do you want "K" on your gravestone? Do you want people to remember you as the mean, not nice person who one day decided to respond to someone with a single letter? "Hey, look, everybody! It's that "K" guy!" That's who you are. You're going to be known as the "K" guy. How does it feel? Do you feel happy? Quite honestly, I don't care, which is why I'm not even going to respond to you. Goodbye, and good luck with your future as that guy who said "K". Alright listen up butt face, and get your comfy seat because we're gonna be here a while. Do you really think you can just get away with "k" as a message? What if someone did that to you, huh? Do you think you would like it? Making an entire paragraph to get a freakin' one letter response of the tenth letter in the alphabet, you think that's freakin' funny, nerd? Do you want your crush to respond back with "k" after you spill your feelings out like this? (Take me back, Emma.) Huh? What if I did it to you? k. Did you freakin' like that? What, did you just pee pee in your pants because someone disregarded your entire effort of writing this ENTIRE paragraph FROM HAND in about fifteen minutes? That just makes me feel freaking rejected just like my ex. (Take me back, Roxanne.) k. What're you, a freaking' homosexual? Can I have a response that actually MEANS something instead of just destroying our "conversation" with the spam of "k?" Now occasionally with questions or something it's reasonable, but doing it to any freaking response they say. "We're having a nuclear crisis, you have fifteen minutes to evacuate." You're the type of person that would actually say "k" to that, you trash human. You think you can get away with this, right? You think it's SOOOOOO funny to do this crap, but I can guarantee that you'll be taken out back and shot soon. You're freaking dead, "k"iddo.</textarea>
+</form>
+</body>
+</html>
