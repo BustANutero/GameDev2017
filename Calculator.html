@@ -133,7 +133,7 @@
 				if (document.getElementById('myText02').value == 0 && document.getElementById('myText01').value == '' ){
 					document.getElementById('myText01').value += '-'
 				}
-				else if (document.getElementById('myText02').value == 0 && document.getElementById('myText03').value == '' ){
+				else if (!(document.getElementById('myText02').value == 0) && document.getElementById('myText03').value == '' ){
 					document.getElementById('myText03').value += '-'
 				};
 
