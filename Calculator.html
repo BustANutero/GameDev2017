@@ -21,20 +21,26 @@
 			 x = parseFloat(document.getElementById('myText01').value) / parseFloat(document.getElementById('myText03').value);
 			 document.getElementById('myDiv01').innerHTML = '<br>'+ document.getElementById('myText01').value + ' '+document.getElementById('myText02').value + ' ' + document.getElementById('myText03').value + ' = ' + x + document.getElementById('myDiv01').innerHTML
 			}
+			};
 			z = /\d+/g;
+			function sin(){
 			y = (document.getElementById('myText01').value).match(z);
-			if (document.getElementById('myText01').value 	== 'Sin' + y){
+			if (document.getElementById('myText01').value 	== y){
 			 document.getElementById('myDiv01').innerHTML = '<br>'+ 'Angle = ' + parseFloat((Math.sin(y * Math.PI / 180)).toFixed(5)) + document.getElementById('myDiv01').innerHTML;
 			}
+			}
+			function cos(){
 			c = (document.getElementById('myText01').value).match(z);
-			if (document.getElementById('myText01').value 	== 'Cos' + c){
+			if (document.getElementById('myText01').value 	== c){
 			 document.getElementById('myDiv01').innerHTML = '<br>'+ 'Angle = ' + parseFloat((Math.cos(c * Math.PI / 180)).toFixed(5)) + document.getElementById('myDiv01').innerHTML;
 			}
+			}
+			function tan(){
 			t = (document.getElementById('myText01').value).match(z);
-			if (document.getElementById('myText01').value 	== 'Tan' + t){
+			if (document.getElementById('myText01').value 	== t){
 			 document.getElementById('myDiv01').innerHTML = '<br>'+ 'Angle = ' + parseFloat((Math.tan(t * Math.PI / 180)).toFixed(5)) + document.getElementById('myDiv01').innerHTML;
 			}
-			};
+			}
 			
 			
 			function clearBox1(){
@@ -169,15 +175,15 @@
 
 }">
 <input type="button" value="Tan" onclick="{
-				document.getElementById('myText01').value = 'Tan'
+				tan()
 
 }">
 <input type="button" value="Sin" onclick="{
-				document.getElementById('myText01').value = 'Sin'
+				sin()
 
 }">
 <input type="button" value="Cos" onclick="{
-				document.getElementById('myText01').value = 'Cos'
+				cos()
 
 }">
 <input type="button" value="Square" onclick="{
