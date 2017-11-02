@@ -6,23 +6,43 @@
 <script>
 			function solve(){
 			if (document.getElementById('myText02').value == '+'){
-			 x = parseFloat(document.getElementById('myText01').value) + parseFloat(document.getElementById('myText03').value)
+			 x = parseFloat(document.getElementById('myText01').value) + parseFloat(document.getElementById('myText03').value);
+			 document.getElementById('myDiv01').innerHTML = '<br>'+ document.getElementById('myText01').value + ' '+document.getElementById('myText02').value + ' ' + document.getElementById('myText03').value + ' = ' + x + document.getElementById('myDiv01').innerHTML
 			}
 			if (document.getElementById('myText02').value == '-'){
-			 x = parseFloat(document.getElementById('myText01').value) - parseFloat(document.getElementById('myText03').value)
+			 x = parseFloat(document.getElementById('myText01').value) - parseFloat(document.getElementById('myText03').value);
+			 document.getElementById('myDiv01').innerHTML = '<br>'+ document.getElementById('myText01').value + ' '+document.getElementById('myText02').value + ' ' + document.getElementById('myText03').value + ' = ' + x + document.getElementById('myDiv01').innerHTML
 			}
 			if (document.getElementById('myText02').value == '*'){
-			 x = parseFloat(document.getElementById('myText01').value) * parseFloat(document.getElementById('myText03').value)
+			 x = parseFloat(document.getElementById('myText01').value) * parseFloat(document.getElementById('myText03').value);
+			 document.getElementById('myDiv01').innerHTML = '<br>'+ document.getElementById('myText01').value + ' '+document.getElementById('myText02').value + ' ' + document.getElementById('myText03').value + ' = ' + x + document.getElementById('myDiv01').innerHTML
 			}
 			if (document.getElementById('myText02').value == '/'){
-			 x = parseFloat(document.getElementById('myText01').value) / parseFloat(document.getElementById('myText03').value)
+			 x = parseFloat(document.getElementById('myText01').value) / parseFloat(document.getElementById('myText03').value);
+			 document.getElementById('myDiv01').innerHTML = '<br>'+ document.getElementById('myText01').value + ' '+document.getElementById('myText02').value + ' ' + document.getElementById('myText03').value + ' = ' + x + document.getElementById('myDiv01').innerHTML
 			}
-			
-				document.getElementById('myDiv01').innerHTML += '<br>'+ document.getElementById('myText01').value + ' '+document.getElementById('myText02').value + ' ' + document.getElementById('myText03').value + ' = ' + x
+			z = /\d+/g;
+			y = (document.getElementById('myText01').value).match(z);
+			if (document.getElementById('myText01').value 	== 'Sin' + y){
+			 document.getElementById('myDiv01').innerHTML = '<br>'+ 'Angle = ' + parseFloat((Math.sin(y * Math.PI / 180)).toFixed(5)) + document.getElementById('myDiv01').innerHTML;
+			}
+			c = (document.getElementById('myText01').value).match(z);
+			if (document.getElementById('myText01').value 	== 'Cos' + c){
+			 document.getElementById('myDiv01').innerHTML = '<br>'+ 'Angle = ' + parseFloat((Math.cos(c * Math.PI / 180)).toFixed(5)) + document.getElementById('myDiv01').innerHTML;
+			}
+			t = (document.getElementById('myText01').value).match(z);
+			if (document.getElementById('myText01').value 	== 'Tan' + t){
+			 document.getElementById('myDiv01').innerHTML = '<br>'+ 'Angle = ' + parseFloat((Math.tan(t * Math.PI / 180)).toFixed(5)) + document.getElementById('myDiv01').innerHTML;
+			}
 			};
-			function clearQues(){
+			
+			
+			function clearBox1(){
 			document.getElementById('myText01').value = ''
-			document.getElementById('myText02').value = '0'
+			document.getElementById('myText02').value = ''
+			};
+			function clearBox2(){
+			document.getElementById('myText02').value = ''
 			document.getElementById('myText03').value = ''
 			};
 </script>
@@ -32,11 +52,11 @@
 <form>
 
 
-<input type="text" readonly="true" id="myText01" size='5' value=''> <input type="text" size='1' readonly id="myText02" value='0'> <input size='5' type="text" readonly="true" id="myText03" value=''><br>
+<input type="text" readonly="true" id="myText01" size='5' value='4'> <input type="text" size='1' readonly id="myText02" value=''> <input size='5' type="text" readonly="true" id="myText03" value='-6.02'><br>
 <br>
 <input type="button" value="7" onclick="{
 	x = document.getElementById('myText02').value
-				if (x == 0){
+				if (x == ''){
 					document.getElementById('myText01').value += 7 * 1
 				}
 				else {
@@ -44,7 +64,7 @@
 				};
 }">
 <input type="button" value="8" onclick="{
-				if (document.getElementById('myText02').value == 0){
+				if (document.getElementById('myText02').value == ''){
 					document.getElementById('myText01').value += 8 * 1
 				}
 				else {
@@ -53,7 +73,7 @@
 
 }">
 <input type="button" value="9" onclick="{
-				if (document.getElementById('myText02').value == 0){
+				if (document.getElementById('myText02').value == ''){
 					document.getElementById('myText01').value += 9 * 1
 				}
 				else {
@@ -62,7 +82,7 @@
 
 }"><br>
 <input type="button" value="4" onclick="{
-				if (document.getElementById('myText02').value == 0){
+				if (document.getElementById('myText02').value == ''){
 					document.getElementById('myText01').value += 4 * 1
 				}
 				else {
@@ -71,7 +91,7 @@
 
 }">
 <input type="button" value="5" onclick="{
-				if (document.getElementById('myText02').value == 0){
+				if (document.getElementById('myText02').value == ''){
 					document.getElementById('myText01').value += 5 * 1
 				}
 				else {
@@ -80,7 +100,7 @@
 
 }">
 <input type="button" value="6" onclick="{
-				if (document.getElementById('myText02').value == 0){
+				if (document.getElementById('myText02').value == ''){
 					document.getElementById('myText01').value += 6 * 1
 				}
 				else {
@@ -89,7 +109,7 @@
 
 }"><br>
 <input type="button" value="1" onclick="{
-				if (document.getElementById('myText02').value == 0){
+				if (document.getElementById('myText02').value == ''){
 					document.getElementById('myText01').value += 1 * 1
 				}
 				else {
@@ -98,7 +118,7 @@
 
 }">
 <input type="button" value="2" onclick="{
-				if (document.getElementById('myText02').value == 0){
+				if (document.getElementById('myText02').value == ''){
 					document.getElementById('myText01').value += 2 * 1
 				}
 				else {
@@ -107,11 +127,21 @@
 
 }">
 <input type="button" value="3" onclick="{
-				if (document.getElementById('myText02').value == 0){
+				if (document.getElementById('myText02').value == ''){
 					document.getElementById('myText01').value += 3 * 1
 				}
 				else {
 					document.getElementById('myText03').value += 3 * 1
+				};
+
+}">
+<br>
+<input type="button" value="0" onclick="{
+				if (document.getElementById('myText02').value == ''){
+					document.getElementById('myText01').value += 0 * 1
+				}
+				else {
+					document.getElementById('myText03').value += 0 * 1
 				};
 
 }">
@@ -121,7 +151,7 @@
 <input type="button" value="*" onclick="{document.getElementById('myText02').value = '*' }">
 <input type="button" value="/" onclick="{document.getElementById('myText02').value = '/' }">
 <input type="button" value="." onclick="{
-				if (document.getElementById('myText02').value == 0){
+				if (document.getElementById('myText02').value == ''){
 					document.getElementById('myText01').value += '.'
 				}
 				else {
@@ -130,17 +160,38 @@
 
 }">
 <input type="button" value="Negative" onclick="{
-				if (document.getElementById('myText02').value == 0 && document.getElementById('myText01').value == '' ){
+				if (document.getElementById('myText02').value == '' && document.getElementById('myText01').value == '' ){
 					document.getElementById('myText01').value += '-'
 				}
-				else if (!(document.getElementById('myText02').value == 0) && document.getElementById('myText03').value == '' ){
+				else if (!(document.getElementById('myText02').value == '') && document.getElementById('myText03').value == '' ){
 					document.getElementById('myText03').value += '-'
 				};
 
 }">
-<br>
-	<input type="button" value="Solve" onclick="{solve(); clearQues()}">
+<input type="button" value="Tan" onclick="{
+				document.getElementById('myText01').value = 'Tan'
+
+}">
+<input type="button" value="Sin" onclick="{
+				document.getElementById('myText01').value = 'Sin'
+
+}">
+<input type="button" value="Cos" onclick="{
+				document.getElementById('myText01').value = 'Cos'
+
+}">
+<input type="button" value="Square" onclick="{
+				document.getElementById('myDiv01').innerHTML = '<br>' + (parseFloat(document.getElementById('myText01').value) * parseFloat(document.getElementById('myText01').value)) + document.getElementById('myDiv01').innerHTML
+}">
+<input type="button" value="Root" onclick="{
+				document.getElementById('myDiv01').innerHTML = '<br>' + (Math.sqrt(parseFloat(document.getElementById('myText01').value))) + document.getElementById('myDiv01').innerHTML
+}">
 <br><br>
+	<input type="button" value="Solve" onclick="{solve(); clearQues();}">
+	
+<br><br>
+<input type="button" value="Clear Box 1" onclick="{clearBox1(); }">
+<input type="button" value="Clear Box 2" onclick="{clearBox2(); }">
 <input type="button" value="Clear Answers" onclick="{document.getElementById('myDiv01').innerHTML = ''}"><br><br>
 <div id="myDiv01"></div>
 
