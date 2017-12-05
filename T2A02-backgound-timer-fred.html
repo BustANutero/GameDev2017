@@ -1,0 +1,75 @@
+<script>
+	function jump(){
+		document.getElementById('girl').style.bottom = parseInt(document.getElementById('girl').style.bottom) + 100 + 'px';
+	}
+function fall(){
+		myBot = parseInt(document.getElementById('girl').style.bottom)
+       myDown = 0
+       myCounter1 = setInterval(function(){
+	   if (myBot < 0){myDown = 0; clearInterval(myCounter1)}
+			myDown = 4
+             document.getElementById('girl').style.bottom = parseInt(document.getElementById('girl').style.bottom) - myDown + 'px'
+
+      }, 10);
+
+	  // every 30 milliseconds
+}
+
+
+</script>
+<body id="myBody" 
+onload="{
+myX = 0;
+myY = 0;
+}" 
+
+style=" background-size: cover; background-image: url('house.jpg'); background-repeat: repeat-x"
+
+	
+onkeydown="{
+	if ((String.fromCharCode(event.keyCode)) == 'D'){
+			myX -= 10;
+			document.getElementById('myBody').style.backgroundPosition = myX + 'px '+ myY+'px';
+			}
+	//if ((String.fromCharCode(event.keyCode)) == 'S'){
+		//	myY -= 4;
+			//document.getElementById('myBody').style.backgroundPosition = myX + 'px '+ myY+'px';
+			//}
+	if ((String.fromCharCode(event.keyCode)) == 'A'){
+			myX += 10;
+			document.getElementById('myBody').style.backgroundPosition = myX + 'px '+ myY+'px';
+			}
+	if ((String.fromCharCode(event.keyCode)) == 'W'){
+			//alert()
+			//document.getElementById('girl').style.bottom = parseInt(document.getElementById('girl').style.bottom) + 100 + 'px';
+			jump();
+			fall();
+			}
+}">
+<input type=button value="Auto Walk" onclick="{
+       
+	   
+       myCounter2 = setInterval(function(){   	   
+             myX -= 10;
+            // myY += 3;
+             document.getElementById('myBody').style.backgroundPosition = myX + 'px '+ myY+'px';
+      }, 30);
+
+
+}">
+<img id="girl" src="https://orig14.deviantart.net/ec32/f/2013/287/c/8/walking__animation__by_nekomiira-d6q8bd2.gif" height="20%" width="5%" style="transform: scaleX(-1); position: absolute;left: 5%; bottom: 0px;">
+<div style=" position: absolute; bottom: 0px; background-image:url('https://cdn.tutsplus.com/active/uploads/legacy/tuts/314_box2D/Tutorial/SimpleCrate.png'); background-repeat:repeat-x;">
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+

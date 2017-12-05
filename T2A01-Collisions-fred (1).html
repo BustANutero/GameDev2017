@@ -1,0 +1,189 @@
+<script>
+
+function myCollide(my1, my2){
+   left1   = parseInt(document.getElementById(my1).style.left);
+   right1  = left1 + parseInt(document.getElementById(my1).style.width);
+   top1    = parseInt(document.getElementById(my1).style.top);
+   bottom1 = top1   + parseInt(document.getElementById(my1).style.height);
+
+   left2   = parseInt(document.getElementById(my2).style.left);
+   right2  = left2 + parseInt(document.getElementById(my2).style.width);
+   top2    = parseInt(document.getElementById(my2).style.top);
+   bottom2 = top2   + parseInt(document.getElementById(my2).style.height);
+   if ((right1  >=  left2  ) && (bottom1 >=  top2   ) && (left1   <=  right2 ) && (top1    <=  bottom2) ){
+       return true;
+   }
+}
+function win(){
+	if ((score[0] >= 1) && (score[1] >= 1)){
+	alert('You win!')
+	score[0] = parseInt(score[0]) + 1
+	score[1] = parseInt(score[1]) + 1
+	}
+}
+function egg1(){
+if ((score[0] >= 1) && (score[1] >= 1)){
+	alert('You already won, stop shooting..')
+	}
+}
+function egg2(){
+if ((score[0] >= 1) && (score[1] >= 1)){
+	alert('Ok.. you obviously don\'t know how to take a hint.')
+	}
+}
+function egg3(){
+if ((score[0] >= 1) && (score[1] >= 1)){
+alert('Alright you\'re a quarter way to 100, you gotta stop.')
+	}
+}
+function egg4(){
+if ((score[0] >= 1) && (score[1] >= 1)){alert('Welp you\'re HALF WAY THERE OWO LIVING ON A PRAYER')
+	}
+}
+function egg5(){
+if ((score[0] >= 1) && (score[1] >= 1)){alert('I guess you actually won the game now. Well done')
+	}
+}
+function egg6(){
+if ((score[0] >= 1) && (score[1] >= 1)){
+	alert('Seriously? Go get a life man...')
+	}
+}
+
+function reset(){
+	document.getElementById('myShot').style.left = parseInt(document.getElementById('myImage01').style.left) + 45 + 'px';
+	document.getElementById('myShot').style.top = parseInt(document.getElementById('myImage01').style.top) + 50 + 'px';
+}
+function shoot(){
+	document.getElementById('myShot').style.left = parseInt(document.getElementById('myShot').style.left) + 100 + 'px';
+}
+</script>
+<body onload="{
+score = new Array()
+score[0] = 0
+score[1] = 0
+x = 0 
+//setInterval(function(){reset();}, 5000)
+}" onkeydown="{
+	if ((String.fromCharCode(event.keyCode)) == 'D'){
+			document.getElementById('myImage01').style.left = parseInt(document.getElementById('myImage01').style.left) + 20 + 'px';
+			document.getElementById('myShot').style.left = parseInt(document.getElementById('myShot').style.left) + 20 + 'px';
+			}
+	if ((String.fromCharCode(event.keyCode)) == 'S'){
+			document.getElementById('myImage01').style.top = parseInt(document.getElementById('myImage01').style.top) + 20 + 'px';
+			document.getElementById('myShot').style.top = parseInt(document.getElementById('myShot').style.top) + 20 + 'px';
+			}
+	if ((String.fromCharCode(event.keyCode)) == 'A'){
+			document.getElementById('myImage01').style.left = parseInt(document.getElementById('myImage01').style.left) - 20 + 'px';
+			document.getElementById('myShot').style.left = parseInt(document.getElementById('myShot').style.left) - 20 + 'px';
+					}
+	if ((String.fromCharCode(event.keyCode)) == 'W'){
+			document.getElementById('myImage01').style.top = parseInt(document.getElementById('myImage01').style.top) - 20 + 'px';
+			document.getElementById('myShot').style.top = parseInt(document.getElementById('myShot').style.top) - 20 + 'px';
+			}
+	if ((String.fromCharCode(event.keyCode)) == 'E'){
+				shoot();
+				if ((parseInt(document.getElementById('myShot').style.left)) >= (parseInt(document.body.clientWidth))){
+				document.getElementById('myShot').style.left = parseInt(document.getElementById('myImage01').style.left) + 45 + 'px';
+				document.getElementById('myShot').style.top = parseInt(document.getElementById('myImage01').style.top) + 50 + 'px';
+				};
+	}
+	
+	if ((myCollide('myShot', 'myTowers')  === true) && (score[0] < 2)){score[0] = parseInt(score[0]) + 1}
+	if (myCollide('myShot', 'myTowers')  == true) {
+	//document.getElementById('myTowers').src = 'https://metrouk2.files.wordpress.com/2017/08/pri_48929886.jpg?w=748&h=487&crop=1';
+
+	document.getElementById('myShot').style.left = parseInt(document.getElementById('myImage01').style.left) + 45 + 'px';
+	document.getElementById('myShot').style.top = parseInt(document.getElementById('myImage01').style.top) + 50 + 'px';
+	if (score[0] === 2) {
+		document.getElementById('myTowers').src = 'https://metrouk2.files.wordpress.com/2017/08/pri_48929886.jpg?w=748&h=487&crop=1';
+		setTimeout(function(){win()}, 20);
+	}
+	if (score[0] >= 2){score[0] = parseInt(score[0]) + 1}
+	if (score[0] === 5) {
+	setTimeout(function(){egg1()}, 20);
+	}
+	if (score[0] === 10) {
+	setTimeout(function(){egg2()}, 20);
+	}
+	if (score[0] === 25) {
+	setTimeout(function(){egg3()}, 20);
+	}
+	if (score[0] === 50) {
+	setTimeout(function(){egg4()}, 20);
+	}
+	if (score[0] === 100) {
+	setTimeout(function(){egg5()}, 20);
+	}
+	if (score[0] === 1000) {
+	setTimeout(function(){egg6()}, 20);
+	}
+	}
+	//setTimeout(function(){win()}, 200);
+if ((myCollide('myShot', 'myPenta')  === true) && (score[1] == 0)){score[1] = parseInt(score[1]) + 1}
+
+
+if (myCollide('myShot', 'myPenta')  == true) {
+	//document.getElementById('myPenta').src = 'http://www.reopen911.org/ReOpen911_2007Archive/images/pentagon_01.jpg';
+		
+	document.getElementById('myShot').style.left = parseInt(document.getElementById('myImage01').style.left) + 45 + 'px';
+	document.getElementById('myShot').style.top = parseInt(document.getElementById('myImage01').style.top) + 50 + 'px';
+	if (score[1] === 1) {
+		document.getElementById('myPenta').src = 'http://www.reopen911.org/ReOpen911_2007Archive/images/pentagon_01.jpg';
+		setTimeout(function(){win()}, 20);
+	}
+	if (score[0] >= 1){score[1] = parseInt(score[1]) + 1}
+	if (score[1] === 5) {
+	setTimeout(function(){egg1()}, 20);
+	}
+	if (score[1] === 10) {
+	setTimeout(function(){egg2()}, 20);
+	}
+	if (score[1] === 25) {
+	setTimeout(function(){egg3()}, 20);
+	}
+	if (score[1] === 50) {
+	setTimeout(function(){egg4()}, 20);
+	}
+	if (score[1] === 100) {
+	setTimeout(function(){egg5()}, 20);
+	}
+	if (score[1] === 1000) {
+	setTimeout(function(){egg6()}, 20);
+	}
+}
+
+	
+
+
+
+}">
+<img  id="myA"  src="myDot.png"  style="position:absolute; width:30px; height:30px; left:30px; top:10px">  
+
+ 
+<br><br><br><br>
+<img  id="myB"  src="myNot.png"  style="position:absolute; width:30px; height:30px; left:100px; top:10px" >  
+ 
+<div id="myOut01">There are 6 easter eggs. WASD to move, E to shoot.</div>
+
+<input type=button value="Move Right and Collide" onclick="{    
+//document.getElementById('myA').style.left = parseInt( document.getElementById('myA').style.left) + 10 + 'px';
+
+//document.getElementById('myOut01').innerHTML = document.getElementById('myA').style.left + ' ,  '+ //document.getElementById('myB').style.left;
+//alert(document.body.clientWidth)
+//alert(document.body.clientHeight)
+//if (myCollide('myA', 'myB')  == true) {
+  // document.getElementById('myOut01').innerHTML =  'You hit me!';
+//}
+
+
+
+
+}">
+<img  id="myImage01"  src="https://i.pinimg.com/736x/c2/0a/cb/c20acb0ac1000fc8e1cb8a7ba1e860f5--wallpaper-backgrounds-wallpapers.jpg" style="position:absolute; width:100px; height:100px; left:30px; top:200px; z-index:-1;">
+<img  id="myTowers" src="https://i.ytimg.com/vi/sPLvdKuea5M/maxresdefault.jpg"  style="position: absolute;width: 100px; height: 100px; left: 1000px; top:500px; z-index:-1">
+<img  id="myPenta" src="https://i.ytimg.com/vi/BWrsrjbiVRE/maxresdefault.jpg"  style="position: absolute;width: 100px; height: 100px; left: 500px; top:200px">
+<img  id="myShot"  src="https://ark.gamepedia.com/media/ark.gamepedia.com/f/fd/Cannon_Ball.png" style="position:absolute; width:10px; height:10px; left:75px; top:250px">
+
+
+
