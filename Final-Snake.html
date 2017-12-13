@@ -17,8 +17,6 @@ z = 5;
 		}, 25);
 		
 
-
-
 function myCollide(my1, my2){
    left1   = parseInt(document.getElementById(my1).style.left);
    right1  = left1 + parseInt(document.getElementById(my1).style.width);
@@ -40,10 +38,19 @@ function ranSpawn(){
 	document.getElementById('myDia').style.top = Math.floor(Math.random() * document.body.clientHeight - 20) + 'px' ;
 	document.getElementById('myDia').style.left = Math.floor(Math.random() * document.body.clientWidth - 20) + 'px' ;
 	if (parseInt(document.getElementById('myDia').style.left) < 0){
-	ranSpawn()
+	ranSpawn();
 	}
 	if (parseInt(document.getElementById('myDia').style.top) < 0){
-	ranSpawn()
+	ranSpawn();
+	}
+	if (myCollide('myDia', 'myBed')  == true){
+	ranSpawn();
+	}	
+	if (myCollide('myDia', 'myBed2')  == true){
+	ranSpawn();
+	}	
+	if (myCollide('myDia', 'myBed3')  == true){
+	ranSpawn();
 	}
 }
 function ranSpawn2(){
@@ -55,11 +62,22 @@ function ranSpawn2(){
 	if (parseInt(document.getElementById('myDia2').style.top) < 0){
 	ranSpawn2()
 	}
+	if (myCollide('myDia2', 'myBed')  == true){
+	ranSpawn2();
+	}	
+	if (myCollide('myDia2', 'myBed2')  == true){
+	ranSpawn2();
+	}	
+	if (myCollide('myDia2', 'myBed3')  == true){
+	ranSpawn2();
+	}
 }
 function embed(){
 	document.getElementById('div01').innerHTML = '<iframe width=0 height=0 src=http://www.youtube.com/embed/GxoB5Cbno1o?rel=0&amp;autoplay=1&amp;start=45 frameborder=0 gesture=media allow=encrypted-media>' + '</iframe>';
 }
 function moveRight(){
+p = parseInt(document.getElementById('myImage01').style.height);
+q = parseInt(document.getElementById('myImage01').style.width);
 		document.getElementById('myImage01').style.left = parseInt(document.getElementById('myImage01').style.left) + z + 'px';
 			if (myCollide('myDia', 'myImage01')  == true) {
 		score[0] = parseInt(score[0]) + 1*1;
@@ -67,10 +85,10 @@ function moveRight(){
 		ranSpawn();
 		document.getElementById('myImage01').style.height = parseInt(document.getElementById('myImage01').style.height) + 10 + 'px';
 		document.getElementById('myImage01').style.width = parseInt(document.getElementById('myImage01').style.width) + 10 + 'px';
-		if (score[0] == 15){
+		if (score[0] == 10){
 		embed();
 		}
-		if (score[0] == 30){
+		if (score[0] == 20){
 		alert('I guess you win now good sir!');
 		window.open('http://google.ca');
 		window.close();
@@ -81,19 +99,14 @@ function moveRight(){
 		ranSpawn2();
 		document.getElementById('myImage01').style.height = parseInt(document.getElementById('myImage01').style.height) + 10 + 'px';
 		document.getElementById('myImage01').style.width = parseInt(document.getElementById('myImage01').style.width) + 10 + 'px';
-		if (score[0] == 15){
+		if (score[0] == 10){
 		embed();
 		}
-		if (score[0] == 30){
+		if (score[0] == 20){
 		alert('I guess you win now good sir!');
 		window.open('http://google.ca');
 		window.close();
 	}
-	}	if ((parseInt(document.getElementById('myImage01').style.width)) >= (parseInt(document.body.clientWidth))){
-		alert('You Fucking Lose Retard')
-	}
-	if ((parseInt(document.getElementById('myImage01').style.height)) >= (parseInt(document.body.clientHeight))){
-		alert('You Fucking Lose Retard')
 	}
 	if (parseInt(document.getElementById('myImage01').style.left) <= 0){
 	setTimeout(function(){alert('You lose.');
@@ -103,17 +116,19 @@ function moveRight(){
 	setTimeout(function(){alert('You lose.');
 	window.close();}, 20)
 	}
-	if (parseInt(document.getElementById('myImage01').style.top) > clientHeight){
-	alert('You lose.');
-	window.close();
+	if (parseInt(document.getElementById('myImage01').style.top) >= (parseInt(document.body.clientHeight) - p)){
+	setTimeout(function(){alert('You lose.');
+	window.close();}, 20)
 	}
-	if (parseInt(document.getElementById('myImage01').style.left) > clientWidth){
-	alert('You lose.');
-	window.close();
+	if (parseInt(document.getElementById('myImage01').style.left) >= (parseInt(document.body.clientWidth) - q)){
+	setTimeout(function(){alert('You lose.');
+	window.close();}, 20)
 	}
 }
 
 function moveDown(){
+p = parseInt(document.getElementById('myImage01').style.height);
+q = parseInt(document.getElementById('myImage01').style.width);
 		document.getElementById('myImage01').style.top = parseInt(document.getElementById('myImage01').style.top) + z + 'px';
 			if (myCollide('myDia', 'myImage01')  == true) {
 		score[0] = parseInt(score[0]) + 1*1;
@@ -121,10 +136,10 @@ function moveDown(){
 		ranSpawn();
 		document.getElementById('myImage01').style.height = parseInt(document.getElementById('myImage01').style.height) + 10 + 'px';
 		document.getElementById('myImage01').style.width = parseInt(document.getElementById('myImage01').style.width) + 10 + 'px';
-		if (score[0] == 15){
+		if (score[0] == 10){
 		embed();
 		}
-		if (score[0] == 30){
+		if (score[0] == 20){
 		alert('I guess you win now good sir!');
 		window.open('http://google.ca');
 		window.close();
@@ -135,19 +150,14 @@ function moveDown(){
 		ranSpawn2();
 		document.getElementById('myImage01').style.height = parseInt(document.getElementById('myImage01').style.height) + 10 + 'px';
 		document.getElementById('myImage01').style.width = parseInt(document.getElementById('myImage01').style.width) + 10 + 'px';
-		if (score[0] == 15){
+		if (score[0] == 10){
 		embed();
 		}
-		if (score[0] == 30){
+		if (score[0] == 20){
 		alert('I guess you win now good sir!');
 		window.open('http://google.ca');
 		window.close();
 	}
-	}	if ((parseInt(document.getElementById('myImage01').style.width)) >= (parseInt(document.body.clientWidth))){
-		alert('You Fucking Lose Retard')
-	}
-	if ((parseInt(document.getElementById('myImage01').style.height)) >= (parseInt(document.body.clientHeight))){
-		alert('You Fucking Lose Retard')
 	}
 	if (parseInt(document.getElementById('myImage01').style.left) <= 0){
 	setTimeout(function(){alert('You lose.');
@@ -157,17 +167,19 @@ function moveDown(){
 	setTimeout(function(){alert('You lose.');
 	window.close();}, 20)
 	}
-	if (parseInt(document.getElementById('myImage01').style.top) > clientHeight){
-	alert('You lose.');
-	window.close();
+	if (parseInt(document.getElementById('myImage01').style.top) >= (parseInt(document.body.clientHeight) - p)){
+	setTimeout(function(){alert('You lose.');
+	window.close();}, 20)
 	}
-	if (parseInt(document.getElementById('myImage01').style.left) > clientWidth){
-	alert('You lose.');
-	window.close();
+	if (parseInt(document.getElementById('myImage01').style.left) >= (parseInt(document.body.clientWidth) - q)){
+	setTimeout(function(){alert('You lose.');
+	window.close();}, 20)
 	}
 }
 
 function moveLeft(){
+p = parseInt(document.getElementById('myImage01').style.height);
+q = parseInt(document.getElementById('myImage01').style.width);
 		document.getElementById('myImage01').style.left = parseInt(document.getElementById('myImage01').style.left) - z + 'px';
 			if (myCollide('myDia', 'myImage01')  == true) {
 		score[0] = parseInt(score[0]) + 1*1;
@@ -175,10 +187,10 @@ function moveLeft(){
 		ranSpawn();
 		document.getElementById('myImage01').style.height = parseInt(document.getElementById('myImage01').style.height) + 10 + 'px';
 		document.getElementById('myImage01').style.width = parseInt(document.getElementById('myImage01').style.width) + 10 + 'px';
-		if (score[0] == 15){
+		if (score[0] == 10){
 		embed();
 		}
-		if (score[0] == 30){
+		if (score[0] == 20){
 		alert('I guess you win now good sir!');
 		window.open('http://google.ca');
 		window.close();
@@ -189,19 +201,14 @@ function moveLeft(){
 		ranSpawn2();
 		document.getElementById('myImage01').style.height = parseInt(document.getElementById('myImage01').style.height) + 10 + 'px';
 		document.getElementById('myImage01').style.width = parseInt(document.getElementById('myImage01').style.width) + 10 + 'px';
-		if (score[0] == 15){
+		if (score[0] == 10){
 		embed();
 		}
-		if (score[0] == 30){
+		if (score[0] == 20){
 		alert('I guess you win now good sir!');
 		window.open('http://google.ca');
 		window.close();
 	}
-	}	if ((parseInt(document.getElementById('myImage01').style.width)) >= (parseInt(document.body.clientWidth))){
-		alert('You Fucking Lose Retard')
-	}
-	if ((parseInt(document.getElementById('myImage01').style.height)) >= (parseInt(document.body.clientHeight))){
-		alert('You Fucking Lose Retard')
 	}
 	if (parseInt(document.getElementById('myImage01').style.left) <= 0){
 	setTimeout(function(){alert('You lose.');
@@ -211,17 +218,19 @@ function moveLeft(){
 	setTimeout(function(){alert('You lose.');
 	window.close();}, 20)
 	}
-	if (parseInt(document.getElementById('myImage01').style.top) > clientHeight){
-	alert('You lose.');
-	window.close();
+	if (parseInt(document.getElementById('myImage01').style.top) >= (parseInt(document.body.clientHeight) - p)){
+	setTimeout(function(){alert('You lose.');
+	window.close();}, 20)
 	}
-	if (parseInt(document.getElementById('myImage01').style.left) > clientWidth){
-	alert('You lose.');
-	window.close();
+	if (parseInt(document.getElementById('myImage01').style.left) >= (parseInt(document.body.clientWidth) - q)){
+	setTimeout(function(){alert('You lose.');
+	window.close();}, 20)
 	}
 }
 
 function moveUp(){
+p = parseInt(document.getElementById('myImage01').style.height);
+q = parseInt(document.getElementById('myImage01').style.width);
 		document.getElementById('myImage01').style.top = parseInt(document.getElementById('myImage01').style.top) - z + 'px';
 			if (myCollide('myDia', 'myImage01')  == true) {
 		score[0] = parseInt(score[0]) + 1*1;
@@ -229,10 +238,10 @@ function moveUp(){
 		ranSpawn();
 		document.getElementById('myImage01').style.height = parseInt(document.getElementById('myImage01').style.height) + 10 + 'px';
 		document.getElementById('myImage01').style.width = parseInt(document.getElementById('myImage01').style.width) + 10 + 'px';
-		if (score[0] == 15){
+		if (score[0] == 10){
 		embed();
 		}
-		if (score[0] == 30){
+		if (score[0] == 20){
 		alert('I guess you win now good sir!');
 		window.open('http://google.ca');
 		window.close();
@@ -244,20 +253,14 @@ function moveUp(){
 		ranSpawn2();
 		document.getElementById('myImage01').style.height = parseInt(document.getElementById('myImage01').style.height) + 10 + 'px';
 		document.getElementById('myImage01').style.width = parseInt(document.getElementById('myImage01').style.width) + 10 + 'px';
-		if (score[0] == 15){
+		if (score[0] == 10){
 		embed();
 		}
-		if (score[0] == 30){
+		if (score[0] == 20){
 		alert('I guess you win now good sir!');
 		window.open('http://google.ca');
 		window.close();
 	}
-	}
-		if ((parseInt(document.getElementById('myImage01').style.width)) >= (parseInt(document.body.clientWidth))){
-		alert('You Fucking Lose Retard')
-	}
-	if ((parseInt(document.getElementById('myImage01').style.height)) >= (parseInt(document.body.clientHeight))){
-		alert('You Fucking Lose Retard')
 	}
 	if (parseInt(document.getElementById('myImage01').style.left) <= 0){
 	setTimeout(function(){alert('You lose.');
@@ -267,20 +270,42 @@ function moveUp(){
 	setTimeout(function(){alert('You lose.');
 	window.close();}, 20)
 	}
-	if (parseInt(document.getElementById('myImage01').style.top) > clientHeight){
-	alert('You lose.');
-	window.close();
+	if (parseInt(document.getElementById('myImage01').style.top) >= (parseInt(document.body.clientHeight) - p)){
+	setTimeout(function(){alert('You lose.');
+	window.close();}, 20)
 	}
-	if (parseInt(document.getElementById('myImage01').style.left) > clientWidth){
-	alert('You lose.');
-	window.close();
+	if (parseInt(document.getElementById('myImage01').style.left) >= (parseInt(document.body.clientWidth) - q)){
+	setTimeout(function(){alert('You lose.');
+	window.close();}, 20)
 	}
 }
+function spawnBed1(){
+document.getElementById('myBed').style.top = Math.floor(Math.random() * document.body.clientHeight - 55) + 'px';
+document.getElementById('myBed').style.left = Math.floor(Math.random() * document.body.clientWidth - 55) + 'px';
+}
+function spawnBed2(){
+document.getElementById('myBed2').style.top = Math.floor(Math.random() * document.body.clientHeight - 55) + 'px';
+document.getElementById('myBed2').style.left = Math.floor(Math.random() * document.body.clientWidth - 55) + 'px';
+}
+function spawnBed3(){
+document.getElementById('myBed3').style.left = Math.floor(Math.random() * document.body.clientWidth - 55) + 'px';
+document.getElementById('myBed3').style.top = Math.floor(Math.random() * document.body.clientHeight - 55) + 'px';
+}
 </script>
-<body style="background-image:url('http://vignette.wikia.nocookie.net/minecraft-mob/images/0/0b/Dirt_texture.png/revision/latest?cb=20150922070823');background-size:cover;" onload="{
-alert('Collect 30 diamonds to advance to the next level');
+<body style="background-image:url('http://vignette.wikia.nocookie.net/minecraft-mob/images/0/0b/Dirt_texture.png/revision/latest?cb=20150922070823');background-size:cover;" 
+
+onload="{
 score = new Array();
 score[0] = 0;
+spawnBed1();
+spawnBed2();
+spawnBed3();
+if (parseInt(document.getElementById('myBed').style.top) <= 0){spawnBed1();}
+if (parseInt(document.getElementById('myBed2').style.top) <= 0){spawnBed2();}
+if (parseInt(document.getElementById('myBed3').style.top) <= 0){spawnBed3();}
+if (parseInt(document.getElementById('myBed').style.left) <= 0){spawnBed1();}
+if (parseInt(document.getElementById('myBed2').style.left) <= 0){spawnBed2();}
+if (parseInt(document.getElementById('myBed3').style.left) <= 0){spawnBed3();}
 }" onkeydown="{
 	
 if ((String.fromCharCode(event.keyCode)) == 'D'){
@@ -291,6 +316,19 @@ if ((String.fromCharCode(event.keyCode)) == 'D'){
 	
     myRight = setInterval(function(){
 		moveRight()
+		setTimeout(function(){
+		if (myCollide('myBed2', 'myImage01')  == true) {
+		alert('You lose.');
+		window.close();
+		}
+		if (myCollide('myBed3', 'myImage01')  == true) {
+		alert('You lose.');
+		window.close();
+		}
+		if (myCollide('myBed', 'myImage01')  == true) {
+		alert('You lose.');
+		window.close();
+		}}, 55);
 		}, 25);
 
 }
@@ -303,6 +341,19 @@ if ((String.fromCharCode(event.keyCode)) == 'S'){
 
 	myDown = setInterval(function(){
 		moveDown();
+		setTimeout(function(){
+		if (myCollide('myBed2', 'myImage01')  == true) {
+		alert('You lose.');
+		window.close();
+		}
+		if (myCollide('myBed3', 'myImage01')  == true) {
+		alert('You lose.');
+		window.close();
+		}
+		if (myCollide('myBed', 'myImage01')  == true) {
+		alert('You lose.');
+		window.close();
+		}}, 55);
 		}, 25);
 			
 }
@@ -314,6 +365,19 @@ if ((String.fromCharCode(event.keyCode)) == 'A'){
 
 	myLeft = setInterval(function(){
 		moveLeft();
+		setTimeout(function(){
+		if (myCollide('myBed2', 'myImage01')  == true) {
+		alert('You lose.');
+		window.close();
+		}
+		if (myCollide('myBed3', 'myImage01')  == true) {
+		alert('You lose.');
+		window.close();
+		}
+		if (myCollide('myBed', 'myImage01')  == true) {
+		alert('You lose.');
+		window.close();
+		}}, 55);
 			}, 25);
 }
 if ((String.fromCharCode(event.keyCode)) == 'W'){
@@ -324,10 +388,24 @@ if ((String.fromCharCode(event.keyCode)) == 'W'){
 	
 	myUp = setInterval(function(){
 		moveUp();
+		setTimeout(function(){
+		if (myCollide('myBed2', 'myImage01')  == true) {
+		alert('You lose.');
+		window.close();
+		}
+		if (myCollide('myBed3', 'myImage01')  == true) {
+		alert('You lose.');
+		window.close();
+		}
+		if (myCollide('myBed', 'myImage01')  == true) {
+		alert('You lose.');
+		window.close();
+		}		}, 55);
 	}, 25);
 }
 	if ((String.fromCharCode(event.keyCode)) == 'Q'){
-		document.getElementById('myDia').style.top = parseInt(document.getElementById('myDia').style.top) - 20 + 'px';
+		ranSpawn();
+		ranSpawn2();
 	}
 		
 
@@ -336,6 +414,9 @@ if ((String.fromCharCode(event.keyCode)) == 'W'){
 
 <img src="https://vignette.wikia.nocookie.net/mconstuct/images/9/90/Diamond_%28Gem%29.png/revision/latest?cb=20110806114926" id="myDia" style="position:absolute;left: 40px;top: 40px;height:12px;width:10px">
 <img src="https://vignette.wikia.nocookie.net/mconstuct/images/9/90/Diamond_%28Gem%29.png/revision/latest?cb=20110806114926" id="myDia2" style="position:absolute;left: 70px;top: 70px;height:12px;width:10px">
+<img src="https://lh3.googleusercontent.com/-LDrC4lBUrvITVSUcuS402GSTg1vKFosbNnMZeSxDYmE-eJ2N2qcDUgOeZljDMMard8RnNDPIDWgixKE-imrOz8=s400" id="myBed" style="position:absolute;left: 85px;top: 85px;height:50px;width:50px">
+<img src="https://lh3.googleusercontent.com/-LDrC4lBUrvITVSUcuS402GSTg1vKFosbNnMZeSxDYmE-eJ2N2qcDUgOeZljDMMard8RnNDPIDWgixKE-imrOz8=s400" id="myBed2" style="position:absolute;left: 400px;top: 85px;height:50px;width:50px">
+<img src="https://lh3.googleusercontent.com/-LDrC4lBUrvITVSUcuS402GSTg1vKFosbNnMZeSxDYmE-eJ2N2qcDUgOeZljDMMard8RnNDPIDWgixKE-imrOz8=s400" id="myBed3" style="position:absolute;left: 600px;top: 400px;height:50px;width:50px">
 <div id="snake">
 <img src="https://media-elerium.cursecdn.com/avatars/33/350/635894784589351376.jpeg" id="myImage01" style="position:absolute;left:5px;top:5px;height:20px;width:20px;">
 </div>
@@ -346,7 +427,7 @@ if ((String.fromCharCode(event.keyCode)) == 'W'){
 <input type="button" value="Very Easy" onclick="{z = 5;}">
 <input type="button" value="Easy" onclick="{z = 10;}">
 <input type="button" value="Normal" onclick="{z = 15;}">
-<input type="button" value="Hard" onclick="{z = 25;}">
-<input type="button" value="Very Hard" onclick="{z = 40;}">
-<input type="button" value="Nightmare" onclick="{z = 70;}">
+<input type="button" value="Hard" onclick="{z = 20;}">
+<input type="button" value="Very Hard" onclick="{z = 25;}">
+<input type="button" value="Nightmare" onclick="{z = 30;}">
 </body>
