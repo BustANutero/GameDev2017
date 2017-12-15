@@ -1,18 +1,31 @@
 <script>
+
+
+document.jumpDone = 0
+
 	function jump(){
+	    if (document.jumpDone == 0){
 		document.getElementById('girl').style.bottom = parseInt(document.getElementById('girl').style.bottom) + 100 + 'px';
+		document.jumpDone = 1
+	    }
 	}
 function fall(){
-		myBot = parseInt(document.getElementById('girl').style.bottom)
        myDown = 0
-       myCounter1 = setInterval(function(){
-	   if (myBot < 0){myDown = 0; clearInterval(myCounter1)}
-			myDown = 4
+	   //myCounter1 = 0
+	   clearInterval(document.myCounter1)
+       document.myCounter1 = setInterval(function(){
+	   if (parseInt(document.getElementById('girl').style.bottom) > 0) {
+		myDown = 4
              document.getElementById('girl').style.bottom = parseInt(document.getElementById('girl').style.bottom) - myDown + 'px'
+	   }
+	   if (parseInt(document.getElementById('girl').style.bottom) <= 0){
+		   document.jumpDone = 0;
+	       myDown = 0; 
+		   clearInterval(myCounter1);
+			
+        }
+      }, 15);
 
-      }, 10);
-
-	  // every 30 milliseconds
 }
 
 
