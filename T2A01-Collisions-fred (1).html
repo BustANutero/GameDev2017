@@ -58,7 +58,7 @@ function shoot(){
 	document.getElementById('myShot').style.left = parseInt(document.getElementById('myShot').style.left) + 100 + 'px';
 }
 </script>
-<body onload="{
+<body style="background-image:url('http://images.all-free-download.com/images/graphicthumb/sunny_blue_sky_background_vector_538313.jpg');background-size:cover;"onload="{
 score = new Array()
 score[0] = 0
 score[1] = 0
@@ -96,6 +96,7 @@ x = 0
 	document.getElementById('myShot').style.left = parseInt(document.getElementById('myImage01').style.left) + 45 + 'px';
 	document.getElementById('myShot').style.top = parseInt(document.getElementById('myImage01').style.top) + 50 + 'px';
 	if (score[0] === 2) {
+		document.getElementById('myDiv01').innerHTML = 'Pentagon Score = ' + score[1] + ' Towers Score = ' + score[0]
 		document.getElementById('myTowers').src = 'https://metrouk2.files.wordpress.com/2017/08/pri_48929886.jpg?w=748&h=487&crop=1';
 		setTimeout(function(){win()}, 20);
 	}
@@ -129,6 +130,7 @@ if (myCollide('myShot', 'myPenta')  == true) {
 	document.getElementById('myShot').style.left = parseInt(document.getElementById('myImage01').style.left) + 45 + 'px';
 	document.getElementById('myShot').style.top = parseInt(document.getElementById('myImage01').style.top) + 50 + 'px';
 	if (score[1] === 1) {
+		document.getElementById('myDiv01').innerHTML = 'Pentagon Score = ' + score[1] + ' Towers Score = ' + score[0]
 		document.getElementById('myPenta').src = 'http://www.reopen911.org/ReOpen911_2007Archive/images/pentagon_01.jpg';
 		setTimeout(function(){win()}, 20);
 	}
@@ -157,29 +159,10 @@ if (myCollide('myShot', 'myPenta')  == true) {
 
 
 
-}">
-<img  id="myA"  src="myDot.png"  style="position:absolute; width:30px; height:30px; left:30px; top:10px">  
+}"> 
+<div id="myOut01">There are 6 easter eggs. The twin towers require two shots to take down and the pentagon requires one. WASD to move, E to shoot.</div>
 
- 
-<br><br><br><br>
-<img  id="myB"  src="myNot.png"  style="position:absolute; width:30px; height:30px; left:100px; top:10px" >  
- 
-<div id="myOut01">There are 6 easter eggs. WASD to move, E to shoot.</div>
-
-<input type=button value="Move Right and Collide" onclick="{    
-//document.getElementById('myA').style.left = parseInt( document.getElementById('myA').style.left) + 10 + 'px';
-
-//document.getElementById('myOut01').innerHTML = document.getElementById('myA').style.left + ' ,  '+ //document.getElementById('myB').style.left;
-//alert(document.body.clientWidth)
-//alert(document.body.clientHeight)
-//if (myCollide('myA', 'myB')  == true) {
-  // document.getElementById('myOut01').innerHTML =  'You hit me!';
-//}
-
-
-
-
-}">
+<div id="myDiv01"></div>
 <img  id="myImage01"  src="https://i.pinimg.com/736x/c2/0a/cb/c20acb0ac1000fc8e1cb8a7ba1e860f5--wallpaper-backgrounds-wallpapers.jpg" style="position:absolute; width:100px; height:100px; left:30px; top:200px; z-index:-1;">
 <img  id="myTowers" src="https://i.ytimg.com/vi/sPLvdKuea5M/maxresdefault.jpg"  style="position: absolute;width: 100px; height: 100px; left: 1000px; top:500px; z-index:-1">
 <img  id="myPenta" src="https://i.ytimg.com/vi/BWrsrjbiVRE/maxresdefault.jpg"  style="position: absolute;width: 100px; height: 100px; left: 500px; top:200px">
