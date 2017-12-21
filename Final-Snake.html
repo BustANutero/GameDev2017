@@ -86,7 +86,7 @@ q = parseInt(document.getElementById('myImage01').style.width);
 		document.getElementById('myImage01').style.height = parseInt(document.getElementById('myImage01').style.height) + 10 + 'px';
 		document.getElementById('myImage01').style.width = parseInt(document.getElementById('myImage01').style.width) + 10 + 'px';
 		if (score[0] == 10){
-		embed();
+		document.getElementById('div01').innerHTML = '<iframe width=300 height=300 src=http://www.youtube.com/embed/GxoB5Cbno1o?rel=0&amp;autoplay=1&amp;start=45 frameborder=0 gesture=media allow=encrypted-media>' + '</iframe>';
 		}
 		if (score[0] == 20){
 		alert('I guess you win now good sir!');
