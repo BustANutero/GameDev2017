@@ -1,10 +1,36 @@
+<head><style>
+.button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 8px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+.button5 {
+    background-color: white;
+    color: black;
+    border: 2px solid green;
+}
+
+.button5:hover {
+    background-color: green;
+    color: white;
+}
+</style></head><div style="text-align:center;vertical-align: 50%;">
 <body style="background-size:cover;background-image:url('http://i.pinimg.com/originals/fa/61/8a/fa618a01a00e9b96c3cb3bee1cd76465.jpg');">
-<input type="button" id="play" value="Play" onclick="{
+<button class="button button5" onclick="{
 window.open('Final-Snake.html','_self');
-}">
-<input type="button" id="howto" value="How To Play" onclick="{
+}">Play</button><br>
+<button class="button button5" onclick="{
 window.open('HowTo.html','_self');
-}">
-<input type="button" id="quit" value="Quit" onclick="{
+}">How To Play</button><br>
+<button class="button button5" onclick="{
 window.close();
-}">
+}">Exit</button>
+</div>

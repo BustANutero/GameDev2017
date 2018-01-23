@@ -1,8 +1,33 @@
+<head><style>
+.button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 8px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+.button5 {
+    background-color: white;
+    color: black;
+    border: 2px solid black;
+}
+
+.button5:hover {
+    background-color: grey;
+    color: white;
+}
+</style></head><div style="text-align:center;vertical-align: 50%;">
 <body style="background-size:cover;background-image:url('https://vignette.wikia.nocookie.net/minecraftpocketedition/images/d/da/Stone2.jpg/revision/latest?cb=20140223185715')">
 <h1 style="font-size:50px;color:white;text-shadow: 2px 2px 0px #000;position:absolute;left:50%;margin-right:-50%;transform:translate(-50%,-50%)"> How To Play </h1>
 <br><br><br><br><br><br>
 <p style="text-align:center;font-size:20px;position:absolute;left:50%;margin-right:-25%;transform:translate(-50%,-50%)">Collect 20 diamonds to continue to the next level. Use WASD to move, avoid the bedrock and there's a secret button that could be useful for certain sticky situations. Good luck and have fun!" </p> <br> <br>
-<input type="button" id="menu" value="Main Menu" onclick="{
+<br><br><button class="button button5"  onclick="{
 window.open('MainMenu.html','_self');
-}">
+}">Main Menu</button>
 </body>
